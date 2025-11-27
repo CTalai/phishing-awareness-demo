@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Awareness Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+    .panel {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    h1 {
+      color: #d9534f;
+    }
+    .reveal {
+      margin-top: 30px;
+      padding: 15px;
+      background: #f9f9f9;
+      border: 2px dashed #d9534f;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Thanks for scanning this QR code!</h1>
+    <p>Here’s what we already know about your device:</p>
+    <div id="info"></div>
+
+    <div class="reveal">
+      <h2>⚠️ Training Reveal</h2>
+      <p>This was a simulation. Imagine if this were a real attacker — they could log your details, track your activity, or deliver malware. You trusted the QR code because it looked legitimate.</p>
+    </div>
+  </div>
+
+  <script>
+    // Capture basic browser metadata
+    const infoDiv = document.getElementById("info");
+    infoDiv.innerHTML = `
+      <p><strong>Browser:</strong> ${navigator.appName}</p>
+      <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+      <p><strong>Platform:</strong> ${navigator.platform}</p>
+    `;
+  </script>
+</body>
+</html>
